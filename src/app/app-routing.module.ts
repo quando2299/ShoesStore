@@ -5,6 +5,7 @@ import { HomeComponent } from './modules/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
+import { CartComponent } from './modules/cart/cart.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,11 @@ const routes: Routes = [
     {
       path: 'detail-product',
       component: DetailProductComponent
+    },
+   
+    {
+      path: 'cart',
+      component: CartComponent
     }, {
       path: 'about-us',
       component: AboutUsComponent
