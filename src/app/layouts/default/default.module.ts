@@ -10,6 +10,7 @@ import { ProductsComponent } from './../../modules/products/products.component';
 import { HomeComponent } from './../../modules/home/home.component';
 import { DefaultComponent } from './default.component';
 import { CommonModule } from '@angular/common';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    SwiperModule
   ]
 })
 export class DefaultModule { }

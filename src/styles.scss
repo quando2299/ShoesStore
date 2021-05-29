@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~swiper/swiper-bundle';
+
+body{
+  margin: 0;
+  padding: 0;
+}
+  /* Swiper */
+  .swiper-container-horizontal > .swiper-pagination-progressbar{
+    top: 99%;
+  }
+  .swiper-pagination-progressbar.swiper-pagination-progressbar{
+    --swiper-theme-color: #343a40
+  }
+  .swiper-button-next:after{
+    content: url('./assets/icon/arrow-right-black.jpg');
+    font-family: unset;
+    background-repeat: no-repeat;
+    padding-right: 5px;
+  }
+  .swiper-button-prev:after{
+    content: url('./assets/icon/arrow-left-black.jpg');
+    font-family: unset;
+    background-repeat: no-repeat;
+    padding-left: 5px;
+  }
