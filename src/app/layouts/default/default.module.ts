@@ -11,6 +11,12 @@ import { HomeComponent } from './../../modules/home/home.component';
 import { DefaultComponent } from './default.component';
 import { CommonModule } from '@angular/common';
 import { SwiperModule } from 'swiper/angular';
+import { Client } from 'src/service-proxy/temp/client-service-proxy';
+
+
+export function getRemoteShoesServiceBaseUrl(): string {
+  return 'http://localhost:5000';
+}
 
 @NgModule({
   declarations: [
@@ -26,6 +32,10 @@ import { SwiperModule } from 'swiper/angular';
     RouterModule,
     SharedModule,
     SwiperModule
+  ],
+  providers: [
+    Client.Client,
+    { provide: Client.API_BASE_URL, useFactory: getRemoteShoesServiceBaseUrl }
   ]
 })
 export class DefaultModule { }

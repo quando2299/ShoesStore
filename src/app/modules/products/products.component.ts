@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Client } from '../../../service-proxy/temp/client-service-proxy'
 
 @Component({
   selector: 'app-products',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+  data: any;
 
-  constructor() { }
+  constructor(
+    private clients: Client.Client
+  ) { }
 
   ngOnInit(): void {
+    this.clients.productsAll(1).subscribe(res => {
+      console.log(res);
+    });
   }
 
 }
