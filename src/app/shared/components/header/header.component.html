@@ -14,179 +14,17 @@
           <img  src="assets/images/logo/logo.png" title="Logo" alt="Logo">
         </a>
       </div>
-  
-      <div class="content-header-bot">
-          <div class="wrap-button">
-  
+
+      <p *ngIf="!dataHeader">Loading....</p>
+
+      <div class="content-header-bot" *ngIf="dataHeader">
+          <div class="wrap-button" *ngFor="let item of dataHeader">
+
             <div class="has-child">
-              <a routerLink="/products">
-                ADIDAS
+              <a routerLink="/products/{{item.id}}">
+                {{item.name}}
               </a>
-              <!-- <div class="child-items">
-                <div class="container-child">
-                    <div class="wrap-cate vertical-line">
-                      <a routerLink="/products">
-                        <div class="wrap-img-cate">
-                          <img src="assets/logo/logoadidas.png">
-                        </div>
-                      </a>
-                    </div>
-                    <div class="wrap-cate">
-                      <a routerLink="/products">
-                        <h6> Đế giày FG </h6>
-                      </a>
-                      <a href="javascript:void(0)">
-                        <div class="wrap-img-cate">
-                          <img src="assets/category/fg-cate.jpg">
-                        </div>
-                      </a>
-                    </div>
-                    <div class="wrap-cate">
-                      <a href="javascript:void(0)">
-                        <h6> Đế giày AG </h6>
-                      </a>
-                      <a href="javascript:void(0)">
-                        <div class="wrap-img-cate">
-                          <img src="assets/category/ag-cate.jpg">
-                        </div>
-                      </a>
-                    </div>
-                    <div class="wrap-cate">
-                      <a href="javascript:void(0)">
-                        <h6> Đế giày TF </h6>
-                      </a>
-                      <a href="javascript:void(0)">
-                        <div class="wrap-img-cate">
-                          <img src="assets/category/tf-cate.jpg">
-                        </div>
-                      </a>
-                    </div>
-                    <div class="wrap-cate">
-                      <a href="javascript:void(0)">
-                        <h6> Đế giày IC </h6>
-                      </a>
-                      <a href="javascript:void(0)">
-                        <div class="wrap-img-cate">
-                          <img src="assets/category/ic-cate.jpg">
-                        </div>
-                      </a>
-                    </div>
-                </div>
-              </div> -->
-            </div>
-  
-            <div class="has-child">
-              <a routerLink="/products">
-                NIKE
-              </a>
-              <!-- <div class="child-items">
-                <div class="container-child">
-                  <div class="wrap-cate vertical-line">
-                    <a href="javascript:void(0)">
-                      <div class="wrap-img-cate">
-                        <img src="assets/logo/logonike.png">
-                      </div>
-                    </a>
-                  </div>
-                    <div class="wrap-cate">
-                      <a href="javascript:void(0)">
-                        <h6> Đế giày FG </h6>
-                      </a>
-                      <a href="javascript:void(0)">
-                        <div class="wrap-img-cate">
-                          <img src="assets/category/fg-cate.jpg">
-                        </div>
-                      </a>
-                    </div>
-                    <div class="wrap-cate">
-                      <a href="javascript:void(0)">
-                        <h6> Đế giày AG </h6>
-                      </a>
-                      <a href="javascript:void(0)">
-                        <div class="wrap-img-cate">
-                          <img src="assets/category/ag-cate.jpg">
-                        </div>
-                      </a>
-                    </div>
-                    <div class="wrap-cate">
-                      <a href="javascript:void(0)">
-                        <h6> Đế giày TF </h6>
-                      </a>
-                      <a href="javascript:void(0)">
-                        <div class="wrap-img-cate">
-                          <img src="assets/category/tf-cate.jpg">
-                        </div>
-                      </a>
-                    </div>
-                    <div class="wrap-cate">
-                      <a href="javascript:void(0)">
-                        <h6> Đế giày IC </h6>
-                      </a>
-                      <a href="javascript:void(0)">
-                        <div class="wrap-img-cate">
-                          <img src="assets/category/ic-cate.jpg">
-                        </div>
-                      </a>
-                    </div>
-                </div>
-              </div> -->
-            </div>
-  
-            <div class="has-child">
-              <a routerLink="/products">
-                PUMA
-              </a>
-              <!-- <div class="child-items">
-                <div class="container-child">
-                    <div class="wrap-cate vertical-line">
-                      <a href="javascript:void(0)">
-                        <div class="wrap-img-cate">
-                          <img src="assets/logo/logopuma.png">
-                        </div>
-                      </a>
-                    </div>
-                    <div class="wrap-cate">
-                      <a href="javascript:void(0)">
-                        <h6> Đế giày FG </h6>
-                      </a>
-                      <a href="javascript:void(0)">
-                        <div class="wrap-img-cate">
-                          <img src="assets/category/fg-cate.jpg">
-                        </div>
-                      </a>
-                    </div>
-                    <div class="wrap-cate">
-                      <a href="javascript:void(0)">
-                        <h6> Đế giày AG </h6>
-                      </a>
-                      <a href="javascript:void(0)">
-                        <div class="wrap-img-cate">
-                          <img src="assets/category/ag-cate.jpg">
-                        </div>
-                      </a>
-                    </div>
-                    <div class="wrap-cate">
-                      <a href="javascript:void(0)">
-                        <h6> Đế giày TF </h6>
-                      </a>
-                      <a href="javascript:void(0)">
-                        <div class="wrap-img-cate">
-                          <img src="assets/category/tf-cate.jpg">
-                        </div>
-                      </a>
-                    </div>
-                    <div class="wrap-cate">
-                      <a href="javascript:void(0)">
-                        <h6> Đế giày IC </h6>
-                      </a>
-                      <a href="javascript:void(0)">
-                        <div class="wrap-img-cate">
-                          <img src="assets/category/ic-cate.jpg">
-                        </div>
-                      </a>
-                    </div>
-                </div>
-              </div> -->
+
             </div>
           </div>
       </div>
@@ -203,4 +41,4 @@
       </div>
     </div>
   </div>
-  
+

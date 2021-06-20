@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from 'src/service-proxy/temp/client-service-proxy';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  branches: any;
 
-  constructor() { }
+  constructor(
+    private clientServiceProxy: Client.Client
+  ) { }
 
   ngOnInit(): void {
+    this.clientServiceProxy.branches().subscribe(res => {
+      console.log(res);
+    })
   }
 
 }
