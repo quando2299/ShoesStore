@@ -7,16 +7,16 @@ import { Client } from 'src/service-proxy/temp/client-service-proxy';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  branches: any;
+  products: any;
 
   constructor(
     private clientServiceProxy: Client.Client
   ) { }
 
   ngOnInit(): void {
-    this.clientServiceProxy.branches().subscribe(res => {
-      console.log(res);
-    })
+    this.clientServiceProxy.home(10).subscribe(res => {
+      this.products = res;
+    });
   }
 
 }

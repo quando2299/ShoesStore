@@ -1,3 +1,4 @@
+import { CartService } from './../../service/cart.service';
 import { AboutUsComponent } from './../../modules/about-us/about-us.component';
 import { SharedModule } from './../../shared/shared.module';
 import { NgModule } from '@angular/core';
@@ -33,7 +34,8 @@ export function getRemoteShoesServiceBaseUrl(): string {
   ],
   providers: [
     Client.Client,
-    { provide: Client.API_BASE_URL, useFactory: getRemoteShoesServiceBaseUrl }
+    { provide: Client.API_BASE_URL, useFactory: getRemoteShoesServiceBaseUrl },
+    CartService
   ]
 })
 export class DefaultModule { }

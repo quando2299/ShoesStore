@@ -15,10 +15,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-8 single-right-left simpleCart_shelfItem">
-            <h3>PUMA FUTURE</h3>
-            <p><span class="item_price">500.000VND</span>
-                <del>550.000VND</del>
+        <div class="col-md-8 single-right-left simpleCart_shelfItem" *ngIf="detail">
+            <h3>{{detail.name}}</h3>
+            <p><span class="item_price">{{detail.price | currency}} VND</span>
+                <!-- <del>550.000VND</del> -->
             </p>
             <div class="rating1">
                 <ul class="stars">
@@ -56,12 +56,7 @@
             </div>
             <div class="occasion-cart">
                 <div class="shoe single-item single_page_b">
-                    <form action="#" method="post">
-                        <input type="submit" name="submit" value="Add to cart" class="button add">
-
-                        <a routerLink="/cart" data-toggle="modal" data-target="#myModal1"></a>
-                    </form>
-
+                        <input type="submit" name="submit" value="Add to cart" class="button add" (click)="addToCart(detail)">
                 </div>
 
             </div>
@@ -107,19 +102,7 @@
                     <div class="tab1">
 
                         <div class="single_page">
-                            <h6>
-                                Trải nghiệm Puma Future 5.3 MG, phiên bản tuyệt vời nhất chơi bóng trên sân cỏ nhân tạo hay tự nhiên. Puma Future 5.3 MG, món hàng được săn đón nhiều nhất trong năm.</h6>
-                            <p>Giày đá bóng Puma Future 5.3 Netfit MG/AG – Ultra Yellow / Puma Black, mã 105797-03, giày đá bóng chính hãng, giày đá bóng Puma chính hãng, upper làm từ sợi kết hợp da tổng hợp cực mềm và ôm chân, đế giày kiểu MG có thể chơi bóng trên cả sân cỏ tự nhiên lẫn cỏ nhân tạo ….
-
-                                Đế MG của giày đá bóng Puma thực sự có đất dụng võ đặc biệt ở trên mặt sân cỏ nhân tạo. Đặc điểm của đế MG là mặt đế giày có rất nhiều đinh nhựa nhỏ, liên tiếp nhau với chiều cao thấp hơn nhiều so với các loại đinh FG hay AG truyền thống. Kiểu đế MG của Puma giúp cho người chơi đồng thời tìm được 1 đôi giày với rất nhiều lợi thế:
-
-                                Đôi giày có trọng lượng nhẹ nhất: so với các loại đế TF thông thường thì đế MG có trọng lượng cực nhẹ, nhẹ tương đương (hoặc hơn) so với các loại đế AG, FG.
-                                Đôi giày có độ bám rất tốt: Ngay cả khi trời mưa trơn trượt, với bộ đế MG thì bạn vẫn có thể thoải mái chạy mà không vấn đề gì.
-                                Không bị lật cổ chân: Đối với rất nhiều người, chơi 1 đôi giày đinh cao là trải nghiệm tuyệt vời, nhưng với điều kiện sân bãi chưa tốt thì với người chưa quen sẽ lo ngại bị lật cổ chân. Đế MG của Puma không bao giờ bị lật cổ chân
-                                Puma Future với Upper cực mềm, sẽ đem lại những pha chạm bóng đầy cảm xúc cho bạn trải nghiệm.
-
-                                </p>
-
+                                <div [innerHtml]="content"></div>
                         </div>
                     </div>
                 </div>
@@ -130,174 +113,28 @@
         <div class="new_arrivals">
             <h3>Featured Products</h3>
             <!-- /womens -->
-            <div class="col-md-3 product-men women_two">
+            <span *ngIf="!listProductFeatures">Loading...</span>
+            <div class="col-md-3 product-men women_two" *ngFor="let item of listProductFeatures">
                 <div class="product-shoe-info shoe">
                     <div class="men-pro-item">
                         <div class="men-thumb-item">
                             <img src="assets/images/product/pumafuture54fg.jpg" alt="">
                             <div class="men-cart-pro">
                                 <div class="inner-men-cart-pro">
-                                    <a routerLink="/detail-product" class="link-product-add-cart">CHI TIẾT</a>
+                                    <a routerLink="/detail-product/{{item.id}}" class="link-product-add-cart">CHI TIẾT</a>
                                 </div>
                             </div>
                             <span class="product-new-top">SP MỚI</span>
                         </div>
                         <div class="item-info-product">
                             <h4>
-                                <a href="single.html">PUMA FUTURE  </a>
+                                <a routerLink="/detail-product/{{item.id}}">{{item.name}} </a>
                             </h4>
                             <div class="info-product-price">
                                 <div class="grid_meta">
                                     <div class="product_price">
                                         <div class="grid-price ">
-                                            <span class="money ">500.000VND</span>
-                                        </div>
-                                    </div>
-                                    <ul class="stars">
-                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="shoe single-item hvr-outline-out">
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart">
-                                        <input type="hidden" name="add" value="1">
-                                        <input type="hidden" name="shoe_item" value="Shuberry Heels">
-                                        <input type="hidden" name="amount" value="575.00">
-                                        <button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
-
-                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                    </form>
-
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 product-men women_two">
-                <div class="product-shoe-info shoe">
-                    <div class="men-pro-item">
-                        <div class="men-thumb-item">
-                            <img src="assets/images/product/pumafuture54fg.jpg" alt="">
-                            <div class="men-cart-pro">
-                                <div class="inner-men-cart-pro">
-                                    <a routerLink="/detail-product" class="link-product-add-cart">CHI TIẾT</a>
-                                </div>
-                            </div>
-                            <span class="product-new-top">SP MỚI</span>
-                        </div>
-                        <div class="item-info-product">
-                            <h4>
-                                <a href="single.html">PUMA FUTURE  </a>
-                            </h4>
-                            <div class="info-product-price">
-                                <div class="grid_meta">
-                                    <div class="product_price">
-                                        <div class="grid-price ">
-                                            <span class="money ">500.000VND</span>
-                                        </div>
-                                    </div>
-                                    <ul class="stars">
-                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="shoe single-item hvr-outline-out">
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart">
-                                        <input type="hidden" name="add" value="1">
-                                        <input type="hidden" name="shoe_item" value="Shuberry Heels">
-                                        <input type="hidden" name="amount" value="575.00">
-                                        <button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
-
-                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                    </form>
-
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 product-men women_two">
-                <div class="product-shoe-info shoe">
-                    <div class="men-pro-item">
-                        <div class="men-thumb-item">
-                            <img src="assets/images/product/pumafuture54fg.jpg" alt="">
-                            <div class="men-cart-pro">
-                                <div class="inner-men-cart-pro">
-                                    <a routerLink="/detail-product" class="link-product-add-cart">CHI TIẾT</a>
-                                </div>
-                            </div>
-                            <span class="product-new-top">SP MỚI</span>
-                        </div>
-                        <div class="item-info-product">
-                            <h4>
-                                <a href="single.html">PUMA FUTURE  </a>
-                            </h4>
-                            <div class="info-product-price">
-                                <div class="grid_meta">
-                                    <div class="product_price">
-                                        <div class="grid-price ">
-                                            <span class="money ">500.000VND</span>
-                                        </div>
-                                    </div>
-                                    <ul class="stars">
-                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="shoe single-item hvr-outline-out">
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart">
-                                        <input type="hidden" name="add" value="1">
-                                        <input type="hidden" name="shoe_item" value="Shuberry Heels">
-                                        <input type="hidden" name="amount" value="575.00">
-                                        <button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
-
-                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                    </form>
-
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 product-men women_two">
-                <div class="product-shoe-info shoe">
-                    <div class="men-pro-item">
-                        <div class="men-thumb-item">
-                            <img src="assets/images/product/pumafuture54fg.jpg" alt="">
-                            <div class="men-cart-pro">
-                                <div class="inner-men-cart-pro">
-                                    <a routerLink="/detail-product" class="link-product-add-cart">CHI TIẾT</a>
-                                </div>
-                            </div>
-                            <span class="product-new-top">SP MỚI</span>
-                        </div>
-                        <div class="item-info-product">
-                            <h4>
-                                <a href="single.html">PUMA FUTURE  </a>
-                            </h4>
-                            <div class="info-product-price">
-                                <div class="grid_meta">
-                                    <div class="product_price">
-                                        <div class="grid-price ">
-                                            <span class="money ">500.000VND</span>
+                                            <span class="money ">{{item.price}} VND</span>
                                         </div>
                                     </div>
                                     <ul class="stars">

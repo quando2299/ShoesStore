@@ -98,20 +98,20 @@
 									<img src="assets/images/product/pumafuture54fg.jpg" alt="">
 									<div class="men-cart-pro">
 										<div class="inner-men-cart-pro">
-											<a routerLink="/detail-product/{item.id}" class="link-product-add-cart">CHI TIẾT</a>
+											<a routerLink="/detail-product/{{item.id}}" class="link-product-add-cart">CHI TIẾT</a>
 										</div>
 									</div>
 									<span class="product-new-top">SP MỚI </span>
 								</div>
 								<div class="item-info-product">
 									<h4>
-										<a href="single.html">{{item.name}}</a>
+										<a routerLink="/detail-product/{{item.id}}">{{item.name}}</a>
 									</h4>
 									<div class="info-product-price">
 										<div class="grid_meta">
 											<div class="product_price">
 												<div class="grid-price ">
-													<span class="money "> VND</span>
+													<span class="money ">{{item.price}} VND</span>
 												</div>
 											</div>
 											<ul class="stars">
