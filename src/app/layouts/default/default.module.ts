@@ -11,7 +11,7 @@ import { DefaultComponent } from './default.component';
 import { CommonModule } from '@angular/common';
 import { SwiperModule } from 'swiper/angular';
 import { Client } from 'src/service-proxy/temp/client-service-proxy';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 export function getRemoteShoesServiceBaseUrl(): string {
   return 'http://localhost:5000';
@@ -30,7 +30,8 @@ export function getRemoteShoesServiceBaseUrl(): string {
     CommonModule,
     RouterModule,
     SharedModule,
-    SwiperModule
+    SwiperModule,
+    NgxPaginationModule
   ],
   providers: [
     Client.Client,

@@ -89,7 +89,7 @@
 
         <span *ngIf="!data">Loading...</span>
 
-				<div class="product-sec1" *ngFor="let item of data">
+				<div class="product-sec1" *ngFor="let item of data | paginate: { itemsPerPage: 10, currentPage: p }">
 
 					<div class="col-md-4 product-men">
 						<div class="product-shoe-info shoe">
@@ -137,15 +137,22 @@
 
 										</div>
 									</div>
+
+
 									<div class="clearfix"></div>
 								</div>
 							</div>
 						</div>
 					</div>
+
+
 				</div>
 				<div class="clearfix"></div>
 			</div>
 		</div>
+    <div class="custom-paging col-md-9">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
 		<div class="clearfix"></div>
 	</div>
 </div>

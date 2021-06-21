@@ -9,6 +9,7 @@ import { Client } from '../../../service-proxy/temp/client-service-proxy';
 })
 export class ProductsComponent implements OnInit {
   data: any;
+  p = 1;
 
   constructor(
     private clients: Client.Client,
